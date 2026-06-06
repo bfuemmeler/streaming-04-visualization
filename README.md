@@ -101,7 +101,7 @@ open a machine terminal in your `Repos` folder:
 
 ```bash
 # Replace username with YOUR GitHub username.
-git clone https://github.com/username/streaming-04-visualization
+git clone https://github.com/bfuemmeler/streaming-04-visualization
 
 cd streaming-04-visualization
 code .
@@ -172,7 +172,7 @@ bin/kafka-topics.sh --create \
   --bootstrap-server localhost:9092 \
   --partitions 1 \
   --replication-factor 1 \
-  --topic streaming-04-visualization-case
+  --topic streaming-04-visualization-fuemmeler
 ```
 
 ### In VS Code Terminal 3: Run Project and Producer (producer)
@@ -199,7 +199,7 @@ uvx pre-commit run --all-files
 
 # run the producer
 clear
-uv run python -m streaming.kafka_producer_case
+uv run python -m streaming.kafka_producer_fuemmeler
 
 # do chores
 uv run ruff format .
@@ -223,7 +223,7 @@ Clear the terminal, then start the consumer.
 
 ```shell
 clear
-uv run python -m streaming.kafka_consumer_case
+uv run python -m streaming.kafka_consumer_fuemmeler
 ```
 
 To start fresh, see
@@ -365,3 +365,13 @@ Look for the word `chart`:
 ```
 
 ![Example Chart after 3 messages](./docs/images/chart_after_3_messages.png)
+
+## Update Authorship
+
+# Update ReadMe, zensical. Update About section on repo main page
+
+## Make a technical modification
+
+- In the .env file, make a few small modifications.
+- Change Kafka topic to streaming-04-visualization-fuemmeler
+- Change Message count to 5 and Message Interval Seconds to 4
