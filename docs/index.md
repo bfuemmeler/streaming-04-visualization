@@ -23,9 +23,13 @@ to get these projects running on your machine.
 
 Kafka producer modified- changed Kafka message key
 producer used `region_id` as the message key
-Changed key to `product_id` so messages could be grouped
+Changed key to `payment method` so messages could be grouped
 This change allows the consumer to count how many
 messages are received for each payment type.
+
+I also modified the live visualizaton file. The original
+chart displayed sales total by message. I updated this to
+display sales subtotal.
 
 ## Custom Project
 
@@ -66,7 +70,7 @@ streaming analytics assignment.
 
 Originally, the producer used `region_id` as the
 Kafka message key. I modified the producer to use
- `product_id` as the Kafka message key instead.
+ `payment_method` as the Kafka message key instead.
  This allowed the consumer to compare how different
  payment types appeared in the stream and count
  messages by key.
@@ -135,8 +139,11 @@ Phase 4
 
 Phase 5
 1. Make an update to the producer file:
-change get_message_key from "region_id" to "product_id"
-2. Update docs/index.md with a Markdown explaining the change
+change get_message_key from "region_id" to "payment_method"
+2. Copy live_visualization_case and update to live_visualization_fuemmeler
+Make an update to the live chart in live_visualization_fuemmeler.py by
+changing the chart title to subtotal
+3. Update docs/index.md with a Markdown explaining the change
 
 ### Results
 
@@ -180,6 +187,9 @@ MESSAGE SENT sent=2
 
 Current key counts: {'credit': 1, 'cash': 1}
 
+The consumer also produced a new output named sales_chart_fuemmeler.png.
+This chart displayed sales subtotals.
+
 ## Interpretation
 
 This Kafka streaming workflow demonstrated how data can move continuously
@@ -189,7 +199,7 @@ at a time while the consumer immediately received and processed those messages.
 
 One important change from the original example was modifying the Kafka
 message key. Originally, the producer used `region_id` as the message key.
-I changed the key to `product_id` so the consumer could group and compare
+I changed the key to `payment_method` so the consumer could group and compare
 messages by product instead of geographic region.
 
 I also modified the consumer to:
