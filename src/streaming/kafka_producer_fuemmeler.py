@@ -196,14 +196,14 @@ def load_reference_data() -> tuple[set[str], set[str]]:
 def get_message_key(message: dict[str, typing.Any]) -> str:
     """Return the Kafka message key for a sale record.
 
-    We use region_id as the key so all sales from the same region
+    We use payment_method as the key so all sales from the same region
     go to the same Kafka partition, keeping them in order.
     """
     try:
-        return str(message["region_id"])
+        return str(message["payment_method"])
     except KeyError as error:
         msg = missing_csv_field_message(
-            field="region_id",
+            field="payment_method",
             available_fields=list(message.keys()),
         )
         raise KeyError(msg) from error

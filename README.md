@@ -375,3 +375,11 @@ Look for the word `chart`:
 - In the .env file, make a few small modifications.
 - Change Kafka topic to streaming-04-visualization-fuemmeler
 - Change Message count to 5 and Message Interval Seconds to 4
+
+## Apply a new skill
+
+- updated to change "total" to "subtotal" to see the visualizations change
+- required an update to live_visualizations_fuemmeler.py file
+- required an update to data_contract_fuemmeler.py file
+- Success resulted in new output file sales_chart_fuemmeler,png that created
+  a chart showing sales subtotals.

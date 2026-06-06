@@ -54,12 +54,12 @@ from dotenv import load_dotenv
 
 from streaming.core.utils import log_env_vars
 from streaming.data_engineering.derived_fields import enrich_message
-from streaming.data_validation.data_contract_case import (
+from streaming.data_validation.data_contract_fuemmeler import (
     CONSUMED_FIELDNAMES,
     SALES_REQUIRED_FIELDS,
     validate_required_fields,
 )
-from streaming.visualizations.live_visualizations_case import (
+from streaming.visualizations.live_visualizations_fuemmeler import (
     close_live_chart,
     init_live_chart,
     save_live_chart,
@@ -88,7 +88,7 @@ DATA_DIR: Final[Path] = ROOT_DIR / "data"
 OUTPUT_DIR: Final[Path] = DATA_DIR / "output"
 
 OUTPUT_CSV: Final[Path] = OUTPUT_DIR / "consumed_sales.csv"
-OUTPUT_CHART: Final[Path] = OUTPUT_DIR / "sales_chart_case.png"
+OUTPUT_CHART: Final[Path] = OUTPUT_DIR / "sales_chart_fuemmeler.png"
 
 REGIONS_CSV: Final[Path] = DATA_DIR / "regions.csv"
 PRODUCTS_CSV: Final[Path] = DATA_DIR / "products.csv"
